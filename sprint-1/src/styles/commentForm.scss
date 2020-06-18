@@ -1,0 +1,36 @@
+@import "partials/variables";
+@import "partials/mixins";
+
+.commentForm {
+  border-bottom: 2px solid $color3;
+  padding-bottom: 24px;
+
+  &__subContainer {
+    display: flex;
+    justify-content: space-between;
+
+    .commentForm__img {
+      width: 55px;
+      height: 55px;
+      background: $color3;
+      border-radius: 50%;
+    }
+
+    .commentForm__text {
+      width: 80%;
+      height: 130px;
+    }
+  }
+
+  .commentForm__btn {
+    width: 80%;
+    height: 60px;
+    background: $color1;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    color: white;
+    font-family: $font-stack-demi;
+    font-size: 20px;
+  }
+}

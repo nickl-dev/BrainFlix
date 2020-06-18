@@ -1,0 +1,40 @@
+@import 'partials/variables';
+
+.comment {
+  display: flex;
+  justify-content: space-between;
+  height: 186px;
+
+  &__img {
+      width: 55px;
+      height: 55px;
+   
+    border-radius: 50%;
+    background: $color3;
+  }
+
+  &__description {
+      width: 80%;
+  }
+
+  &__name-date {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 30px;
+    
+  }
+
+  &__name {
+    margin: 0;
+  }
+
+  &_date {
+    margin: 0;
+  }
+
+  &__text {
+    margin: 0;
+    padding: 16px 0 4px 0;
+  }
+}
