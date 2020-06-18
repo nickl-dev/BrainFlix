@@ -1,5 +1,5 @@
 import React from "react";
-import BrainflixLogo from "../assets/Logo/logo-brainflix.png";
+import BrainflixLogo from "../assets/Logo/logo-brainflix.svg";
 import SearchIcon from "../assets/Icons/PNG/icon-search.png";
 import "../styles/header.scss";
 

@@ -1,40 +1,47 @@
-@import 'partials/variables';
+@import "partials/variables";
 
 .comment {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   height: 186px;
+  padding: 16px 0;
+  border-bottom: 2px solid $color3;
+  font-size: $mobiletext2;
+
 
   &__img {
-      width: 55px;
-      height: 55px;
-   
+    width: 55px;
+    height: 55px;
+    align-self: flex-start;
+    margin-top: 20px;
     border-radius: 50%;
     background: $color3;
   }
 
   &__description {
-      width: 80%;
+    width: 80%;
   }
 
   &__name-date {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 30px;
-    
-  }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
 
-  &__name {
-    margin: 0;
-  }
+    .comment__name {
+      margin: 0;
+      font-family: $font-stack-demi;
+    }
 
-  &_date {
-    margin: 0;
+    .comment__date {
+      margin: 0;
+      color: $color4;
+    }
   }
 
   &__text {
     margin: 0;
-    padding: 16px 0 4px 0;
+    padding-top: 10px;
   }
 }

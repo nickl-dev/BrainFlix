@@ -1,0 +1,36 @@
+@import "partials/variables";
+
+.videos__heading {
+  font-size: $mobiletext2;
+  color: $color4;
+}
+
+.videos__nextVideo {
+  display: flex;
+  justify-content: space-between;
+  margin: 24px 0;
+
+  .nextVideo__img {
+    width: 140px;
+    height: 80px;
+    background: $color1;
+    border-radius: 4px;
+  }
+
+  .nextVideo__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 230px;
+    font-size: $mobiletext2;
+
+    .nextVideo__title {
+      margin: 0;
+      font-family: $font-stack-demi;
+    }
+
+    .nextVideo__by {
+      margin: 0;
+    }
+  }
+}

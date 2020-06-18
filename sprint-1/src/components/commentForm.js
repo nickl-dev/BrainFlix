@@ -6,7 +6,7 @@ export default function CommentForm() {
     <section className="commentForm">
       <h3 className="commentForm__count">3 Comments</h3>
       <form action="POST" className="commentForm__form">
-        <h4 className="commentForm__title">JOIN THE CONVERSATION</h4>
+        <h4 className="commentForm__heading">JOIN THE CONVERSATION</h4>
         <div className="commentForm__subContainer">
           <div className="commentForm__img"></div>
           <textarea
