@@ -41,6 +41,9 @@
     font-family: $font-stack-demi;
     color: #ffffff;
     font-size: 20px;
+   &__img {
+     width: 20px;
+   }
   }
 
   &__profile-img {
