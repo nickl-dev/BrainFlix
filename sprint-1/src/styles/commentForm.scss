@@ -4,6 +4,7 @@
 .commentForm {
   border-bottom: 2px solid $color3;
   padding-bottom: 24px;
+  padding: 0 16px 24px 16px;
 
   &__count {
     font-family: $font-stack-demi;
@@ -11,18 +12,15 @@
     margin: 0;
   }
 
-  &__heading {
-    color: $color4;
-    margin: 32px 0 0 20%;
-  }
-
   &__subContainer {
     display: flex;
     justify-content: space-between;
+    margin-top: 32px;
 
     .commentForm__img {
       width: 60px;
       height: 60px;
+      margin-top: 25px;
       background: $color3;
       border-radius: 50%;
       background: url("../assets/Images/mohan-muruge.jpg");
@@ -30,30 +28,83 @@
       background-size: cover;
     }
 
-    .commentForm__text {
-      width: 70%;
-      height: 100px;
-      padding: 16px;
-      margin: 8px 0 16px 0;
-      border: 3px solid $color1;
-      border-radius: 4px;
-      outline: none;
-      background: $color5;
-      font-family: $font-stack-reg;
-      font-size: $mobiletext2;
+    .commentForm__join {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      margin-left: 24px;
+      .commentForm__heading-text {
+        width: 100%;
+        .commentForm__heading {
+          color: $color4;
+          margin: 0;
+        }
+        .commentForm__text {
+          box-sizing: border-box;
+          width: 100%;
+          height: 130px;
+          padding: 16px;
+          margin: 8px 0 16px 0;
+          border: 3px solid $color1;
+          border-radius: 4px;
+          outline: none;
+          background: $color5;
+          font-family: $font-stack-reg;
+          font-size: $mobiletext2;
+        }
+      }
+      .commentForm__btn {
+        width: 100%;
+        height: 60px;
+        background: $color1;
+        border-radius: 4px;
+        border: none;
+        outline: none;
+        color: $color5;
+        font-family: $font-stack-demi;
+        font-size: 18px;
+      }
     }
   }
+}
 
-  .commentForm__btn {
-    width: 80%;
-    height: 60px;
-    background: $color1;
-    border-radius: 4px;
-    border: none;
-    outline: none;
-    color: white;
-    font-family: $font-stack-demi;
-    font-size: 20px;
-    margin-left: 20%;
+@include tablet {
+  .commentForm {
+    border-bottom: 2px solid $color3;
+    padding: 0 24px 24px 24px;
+
+    &__subContainer {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      .commentForm__img {
+        margin: 0;
+      }
+
+      .commentForm__join {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0;
+        width: 85%;
+
+        .commentForm__heading-text {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          .commentForm__text {
+            height: 60px;
+            margin: 0;
+          }
+        }
+        .commentForm__btn {
+          width: 40%;
+          height: 60px;
+          margin: 16px 0 0 16px;
+        }
+      }
+    }
   }
 }

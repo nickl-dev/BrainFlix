@@ -1,8 +1,21 @@
 import React from "react";
 import BrainflixLogo from "../assets/Logo/logo-brainflix.svg";
-import SearchIcon from "../assets/Icons/SVG/Icon-search.svg";
 import UploadIcon from "../assets/Icons/SVG/Icon-upload.svg";
 import "../styles/header.scss";
+
+// import axios from "axios";
+
+// const getMainVideoData = () => {
+//   axios
+//     .get("../../mainVideo.json")
+//     .then((response) => {
+//       console.log(response);
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+// };
+// getMainVideoData();
 
 export default function Header() {
   return (

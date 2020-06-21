@@ -3,9 +3,28 @@
 
 .video__container {
   width: 100%;
+  height: 250px;
+  background: $color1;
+
   .video {
     width: 100%;
-    height: 200px;
-    padding: 0;
+    height: 100%;
+    object-fit: cover;
+
+  }
+}
+
+@include tablet {
+  .video__container {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    background: $color2;
+
+    .video {
+      height: 100%;
+      width: 90%;
+
+    }
   }
 }

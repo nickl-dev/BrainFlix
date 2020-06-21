@@ -1,5 +1,19 @@
 import React from "react";
 import NextVideo from "./nextVideo";
+import '../styles/videos.scss'
+// import axios from "axios";
+
+// function getNextVideoData() {
+//   axios
+//     .get("../../nextVideo.json")
+//     .then(function (response) {
+//       console.log(response);
+//     })
+//     .catch(function (err) {
+//       console.log(err);
+//     });
+// }
+// getNextVideoData();
 
 export default function VideoList() {
   return (
