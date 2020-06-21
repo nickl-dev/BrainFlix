@@ -8,3 +8,16 @@ body {
   font-family: $font-stack-reg;
   color: $color2;
 }
+
+@include desktop {
+  .desktop__container {
+    display: flex;
+    padding: 0 12.5%;
+  }
+
+  .desktop__subcontainer {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 24px;
+  }
+}

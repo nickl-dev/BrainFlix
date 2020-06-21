@@ -12,33 +12,37 @@
     display: flex;
     flex-direction: column;
     border-bottom: 2px solid $color3;
-  }
 
-  &__by-time {
-    display: flex;
-    align-items: center;
+    .highlights__views-likes {
+      display: flex;
+      align-items: center;
+      margin-top: 32px;
+      padding-bottom: 24px;
+      font-size: $mobiletext2;
 
-    .highlights__by {
-      font-family: $font-stack-demi;
-      font-size: 20px;
-      margin: 0;
+      .highlights__views {
+        margin: 0;
+      }
+
+      .highlights__likes {
+        margin: 0 0 0 24px;
+      }
     }
+    .highlights__by-time {
+      display: flex;
+      align-items: center;
 
-    .highlights__timestamp {
-      font-size: 18px;
-      color: #afafaf;
-      margin: 0 0 0 16px;
-    }
-  }
+      .highlights__by {
+        font-family: $font-stack-demi;
+        font-size: 20px;
+        margin: 0;
+      }
 
-  &__views-likes {
-    display: flex;
-    align-items: center;
-    margin-top: 32px;
-    padding-bottom: 24px;
-    font-size: $mobiletext2;
-    .highlights__likes {
-      margin: 0 0 0 24px;
+      .highlights__timestamp {
+        font-size: 18px;
+        color: #afafaf;
+        margin: 0 0 0 16px;
+      }
     }
   }
 
@@ -61,12 +65,67 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
+      padding-bottom: 24px;
+
+      .highlights__views-likes {
+        margin: 0;
+        padding: 0;
+
+        .highlights__views {
+          margin: 0;
+        }
+      }
     }
 
     &__paragraph {
       line-height: 32px;
       margin: 40px 0 64px 0;
       font-size: 18px;
+      width: 80%;
+    }
+  }
+}
+
+@include desktop {
+  .highlights {
+    padding: 0;
+    &__heading {
+      margin: 40px 0 24px 0;
+      font-size: 38px;
+    }
+
+    &__subtext {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 24px;
+
+      .highlights__by-time {
+        .highlights__by {
+          font-size: 18px;
+        }
+
+        .highlights__timestamp {
+          font-size: 16px;
+        }
+      }
+
+      .highlights__views-likes {
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+
+        .highlights__views {
+          margin: 0;
+        }
+      }
+    }
+
+    &__paragraph {
+      line-height: 24px;
+      margin: 40px 0 64px 0;
+      font-size: 16px;
       width: 80%;
     }
   }

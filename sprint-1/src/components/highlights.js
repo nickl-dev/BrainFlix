@@ -9,7 +9,7 @@ export default class Highlights extends Component {
   render() {
     return (
       <main className="highlights">
-        <Video />
+        {/* <Video /> */}
         <h1 className="highlights__heading">BMX Rampage: 2018 Highlights</h1>
 
         <div className="highlights__subtext">
