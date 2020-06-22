@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import NextVideo from "./nextVideo";
-import "../styles/videos.scss";
+import "../styles/videoList.scss";
 import NextVideoData from "../BrainFlixData/nextVideo.json";
 
 class VideoList extends Component {
@@ -11,6 +11,7 @@ class VideoList extends Component {
   render() {
     return (
       <section className="videos">
+        <h5 className="videos__heading">NEXT VIDEO</h5>
         {this.state.nextVideoContent.map((nextVideo) => (
           <NextVideo
             key={nextVideo.key}

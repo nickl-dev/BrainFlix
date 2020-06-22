@@ -32,16 +32,16 @@
     justify-content: space-between;
     align-items: center;
     height: 30px;
+  }
 
-    .comment__name {
-      margin: 0;
-      font-family: $font-stack-demi;
-    }
+  &__name {
+    margin: 0;
+    font-family: $font-stack-demi;
+  }
 
-    .comment__date {
-      margin: 0;
-      color: $color4;
-    }
+  &__date {
+    margin: 0;
+    color: $color4;
   }
 
   &__text {
@@ -77,10 +77,10 @@
       display: flex;
       justify-content: flex-start;
       height: 30px;
+    }
 
-      .comment__date {
-        margin-left: 24px;
-      }
+    &__date {
+      margin-left: 24px;
     }
 
     &__text {
@@ -96,6 +96,7 @@
   }
   .comment {
     height: 100px;
+
     &__img {
       width: 50px;
       height: 50px;
@@ -104,9 +105,9 @@
 
     &__name-date {
       font-size: 16px;
-      .comment__date {
-        font-size: 14px;
-      }
+    }
+    &__date {
+      font-size: 14px;
     }
 
     &__text {
