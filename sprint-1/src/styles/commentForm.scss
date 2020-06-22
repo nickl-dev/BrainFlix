@@ -69,7 +69,11 @@
     color: $color5;
     font-family: $font-stack-demi;
     font-size: 18px;
+    &:hover{
+      cursor: pointer;
+    }
   }
+
 }
 
 @include tablet {

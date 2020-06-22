@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Comment from "./comment";
 import commentData from "../BrainFlixData/comments.json";
 
-class CommentArea extends Component {
+export default class CommentArea extends Component {
   state = {
     commentContent: commentData,
   };
@@ -18,7 +18,7 @@ class CommentArea extends Component {
       <section className="commentArea">
         {this.state.commentContent.map((comment) => (
           <Comment
-            key={comment.key}
+            key={comment.id}
             name={comment.name}
             date={comment.timestamp}
             commentText={comment.comment}
@@ -29,4 +29,3 @@ class CommentArea extends Component {
   }
 }
 
-export default CommentArea;

@@ -1,17 +1,20 @@
 import React, { Component } from "react";
 import "../styles/highlights.scss";
-import mainVideoData from "../BrainFlixData/mainVideo.json";
 import IconViews from "../assets/Icons/SVG/Icon-views.svg";
 import IconLikes from "../assets/Icons/SVG/Icon-likes.svg";
+import mainVideoData from "../BrainFlixData/mainVideo.json";
 
 console.log(mainVideoData);
 
 export default class Highlights extends Component {
+  state = {
+    highlightsContent: mainVideoData,
+  };
+
   render() {
     return (
       <main className="highlights">
         <h1 className="highlights__heading">BMX Rampage: 2018 Highlights</h1>
-
         <div className="highlights__subtext">
           <div className="highlights__by-time">
             <h2 className="highlights__by">By Red Cow</h2>
