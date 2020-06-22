@@ -50,7 +50,7 @@
           outline: none;
           background: $color5;
           font-family: $font-stack-reg;
-          font-size: $mobiletext2;
+          font-size: 18px;
         }
       }
       .commentForm__btn {
@@ -130,6 +130,7 @@
 
           .commentForm__text {
             height: 50px;
+            font-size: 14px;
           }
         }
         .commentForm__btn {

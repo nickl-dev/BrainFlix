@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "../styles/highlights.scss";
-import Video from "./video";
-import mainVideoData from "../Data/mainVideo.json";
+import mainVideoData from "../BrainFlixData/mainVideo.json";
+import IconViews from "../assets/Icons/SVG/Icon-views.svg";
+import IconLikes from "../assets/Icons/SVG/Icon-likes.svg";
 
 console.log(mainVideoData);
 
@@ -9,7 +10,6 @@ export default class Highlights extends Component {
   render() {
     return (
       <main className="highlights">
-        {/* <Video /> */}
         <h1 className="highlights__heading">BMX Rampage: 2018 Highlights</h1>
 
         <div className="highlights__subtext">
@@ -18,14 +18,21 @@ export default class Highlights extends Component {
             <p className="highlights__timestamp">12/18/2018</p>
           </div>
           <div className="highlights__views-likes">
+            <img
+              className="highlights__icons"
+              src={IconViews}
+              alt="Views icon"
+            />
             <p className="highlights__views">1,001,023</p>
+            <img
+              className="highlights__icons"
+              src={IconLikes}
+              alt="Likes icon"
+              href="#"
+            />
             <p className="highlights__likes">110,985</p>
           </div>
         </div>
-        {/* <div className="highlights__views-likes">
-          <p className="highlights__views">1,001,023</p>
-          <p className="highlights__likes">110,985</p>
-        </div> */}
         <p className="highlights__paragraph">
           On a gusty day in Southern Utah, a group of 25 daring mountain bikers
           blew the doors off what is possible on two wheels, unleashing some of

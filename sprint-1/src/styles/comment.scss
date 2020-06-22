@@ -12,7 +12,7 @@
   height: 186px;
   padding: 16px 0;
   border-bottom: 2px solid $color3;
-  font-size: $mobiletext2;
+  font-size: 18px;
 
   &__img {
     width: 55px;
@@ -61,7 +61,7 @@
     height: 130px;
     padding: 16px 0;
     border-bottom: 2px solid $color3;
-    font-size: $mobiletext2;
+    font-size: 18px;
 
     &__img {
       margin-left: 8px;
@@ -99,9 +99,8 @@
     &__img {
       width: 50px;
       height: 50px;
-      margin: 10px 0 0 8px;
+      margin: 16px 0 0 8px;
     }
-
 
     &__name-date {
       font-size: 16px;

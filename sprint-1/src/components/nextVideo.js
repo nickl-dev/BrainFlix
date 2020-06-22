@@ -7,7 +7,7 @@ export default function NextVideo(props) {
       <div className="nextVideo__img">{props.img}</div>
       <div className="nextVideo__text">
         <p className="nextVideo__title">{props.title}</p>
-        <p className="nextVideo__by">{props.by}</p>
+        <p className="nextVideo__by">{props.channel}</p>
       </div>
     </div>
   );

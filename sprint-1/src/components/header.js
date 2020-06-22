@@ -1,6 +1,5 @@
 import React from "react";
 import BrainflixLogo from "../assets/Logo/logo-brainflix.svg";
-import UploadIcon from "../assets/Icons/SVG/Icon-upload.svg";
 import "../styles/header.scss";
 
 // import axios from "axios";
@@ -24,7 +23,6 @@ export default function Header() {
       <input className="header__input" type="text" placeholder="Search" />
       <div className="header__container">
         <button className="header__btn">
-          <img src={UploadIcon} alt="" className="btn__icon" />
           UPLOAD
         </button>
         <div className="header__profile-img"></div>

@@ -21,8 +21,18 @@
     background: $color2;
 
     .video {
-      height: 100%;
       width: 90%;
+      height: 100%;
+    }
+  }
+}
+
+@include desktop {
+  .video__container {
+    height: 600px;
+
+    .video {
+      width: 70%;
     }
   }
 }
