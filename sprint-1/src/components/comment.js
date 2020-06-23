@@ -1,8 +1,6 @@
 import React from "react";
 import "../styles/comment.scss";
 
-
-
 export default function Comment(props) {
   return (
     <div className="comment">

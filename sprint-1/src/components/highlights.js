@@ -15,7 +15,7 @@ export default function Highlights(props) {
         <div className="highlights__views-likes">
           <img className="highlights__icons" src={IconViews} alt="Views icon" />
           <p className="highlights__views">{props.data.views}</p>
-          <img className="highlights__icons" src={IconLikes} alt="Likes icon"/>
+          <img className="highlights__icons" src={IconLikes} alt="Likes icon" />
           <p className="highlights__likes">{props.data.likes}</p>
         </div>
       </div>

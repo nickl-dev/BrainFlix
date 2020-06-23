@@ -8,17 +8,10 @@ export default class CommentArea extends Component {
     commentContent: commentData,
   };
 
-
   render() {
-    const date = new Date(commentData.timestamp);
-    const month = date.getMonth() + 1;
-    const day = date.getDate();
-    const year = date.getFullYear();
-    const timeStamp = `${month}/${day}/${year}`;
-
     return (
       <section className="commentArea">
-        {this.state.commentContent.map((comment) => (
+        {this.state.commentContent.reverse().map((comment) => (
           <Comment
             key={comment.id}
             name={comment.name}
@@ -30,4 +23,3 @@ export default class CommentArea extends Component {
     );
   }
 }
-
