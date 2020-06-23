@@ -13,10 +13,10 @@ export default class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Video data={MainVideoData}/>
+        <Video data={MainVideoData} />
         <div className="desktop__container">
           <div className="desktop__subcontainer">
-            <Highlights />
+            <Highlights data={MainVideoData} />
             <CommentForm />
             <CommentArea />
           </div>

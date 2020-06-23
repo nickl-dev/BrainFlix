@@ -25,6 +25,9 @@
 
   &__icons {
     margin-right: 8px;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &__views {

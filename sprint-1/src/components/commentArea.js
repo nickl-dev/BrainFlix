@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import Comment from "./comment";
 import commentData from "../BrainFlixData/comments.json";
 
+console.log(commentData);
 export default class CommentArea extends Component {
   state = {
     commentContent: commentData,
   };
+
 
   render() {
     const date = new Date(commentData.timestamp);
