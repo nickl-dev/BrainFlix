@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "avenir";
+  src: url("../../assets/global-font/avenirNextProLt/alternative-files/avenirNextLtPro-regular.ttf");
+}
+
+@font-face {
+  font-family: "avenir-demi";
+  src: url("../../assets/global-font/avenirNextProLt/alternative-files/avenirNextLtPro-demi.ttf");
+}
+
+@font-face {
+  font-family: "avenir-bold";
+  src: url("../../assets/global-font/avenirNextProLt/alternative-files/avenirNextLtPro-bold.ttf");
+}
+
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1200px;
+
+$font-stack-reg: "avenir";
+$font-stack-demi: "avenir-demi";
+$font-stack-bold: "avenir-bold";
+
+$color1: #0095ff;
+$color2: #323232;
+$color3: #e1e1e1;
+$color4: #afafaf;
+$color5: #fafafa;
