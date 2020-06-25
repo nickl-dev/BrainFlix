@@ -7,17 +7,16 @@ import axios from "axios";
 const api__url= 'https://project-2-api.herokuapp.com';
 const api__key= '4a0219df-52b3-47e4-a3a5-958a1a7fa8c7';
 
-axios.get(`${api__url}?api_key=${api__key}/videos`)
-.then(response => console.log(response));
+axios.get(`${api__url}?api_key=${api__key}`)
+.then(response => console.log(response))
+.catch(err => console.log(err))
 
 export default class VideoList extends Component {
   state = {
     nextVideoContent: NextVideoData,
   };
+  
 
-
-// axios.get(`${api__url}${api__key}`)
-// .then(response => console.log(response))
 
 
 

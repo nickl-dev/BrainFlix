@@ -1,7 +1,6 @@
 import React from "react";
 import "../styles/upload.scss";
 import SampleVideo from "../assets/Video/brainstation-sample-video.mp4";
-import { Link } from "react-router-dom";
 
 export default function Upload() {
   return (
