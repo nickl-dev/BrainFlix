@@ -51,6 +51,11 @@
     background-position-x: 30%;
     background-position-y: 45%;
     background-size: 20px;
+    a {
+      text-decoration: none;
+      color: $color5;
+      padding-left: 10px;
+    }
   }
 
   &__profile-img {
@@ -118,7 +123,7 @@
     }
 
     &__btn {
-      max-width: 130px;
+      width: 103px;
       font-size: 16px;
       background-size: 14px;
     }
