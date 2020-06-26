@@ -1,5 +1,5 @@
-@import "partials/variables";
-@import "partials/mixins";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/mixins";
 
 .video__container {
   width: 100%;
@@ -35,8 +35,8 @@
     height: 32px;
     width: 50px;
   }
-  
-  .video__icon:hover{
+
+  .video__icon:hover {
     cursor: pointer;
   }
 

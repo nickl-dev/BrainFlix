@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Comment from "./Comment";
-import commentData from "../BrainFlixData/Comments.json";
+import Comment from "../Comment/Comment";
+import commentData from "../../BrainFlixData/Comments.json";
 
 export default class CommentArea extends Component {
   state = {

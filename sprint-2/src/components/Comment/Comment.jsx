@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/comment.scss";
+import "./Comment.scss";
 
 export default function Comment(props) {
   return (

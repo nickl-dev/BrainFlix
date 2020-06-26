@@ -1,24 +1,10 @@
 import React, { Component } from "react";
-import NextVideo from "./NextVideo";
-import "../styles/videoList.scss";
-import NextVideoData from "../BrainFlixData/NextVideo.json";
-import axios from "axios";
-
-const api__url= 'https://project-2-api.herokuapp.com';
-const api__key= '4a0219df-52b3-47e4-a3a5-958a1a7fa8c7';
-
-axios.get(`${api__url}?api_key=${api__key}`)
-.then(response => console.log(response))
-.catch(err => console.log(err))
+import NextVideo from "../NextVideo/NextVideo";
+import "./VideoList.scss";
+// import NextVideoData from "../../BrainFlixData/NextVideo.json";
 
 export default class VideoList extends Component {
-  state = {
-    nextVideoContent: NextVideoData,
-  };
-  
-
-
-
+ 
 
   render() {
     return (
@@ -36,4 +22,3 @@ export default class VideoList extends Component {
     );
   }
 }
-

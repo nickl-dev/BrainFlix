@@ -1,5 +1,5 @@
-@import "partials/variables";
-@import "partials/mixins";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/mixins";
 
 .header {
   height: 215px;
@@ -22,7 +22,7 @@
     outline: none;
     font-family: $font-stack-reg;
     font-size: 20px;
-    background: url("../assets/Icons/SVG/Icon-search.svg");
+    background: url("../../assets/Icons/SVG/Icon-search.svg");
     background-repeat: no-repeat;
     background-position-x: 16px;
     background-position-y: 50%;
@@ -46,7 +46,7 @@
     font-family: $font-stack-demi;
     color: $color5;
     font-size: 18px;
-    background-image: url("../assets/Icons/SVG/Icon-upload.svg");
+    background-image: url("../../assets/Icons/SVG/Icon-upload.svg");
     background-repeat: no-repeat;
     background-position-x: 30%;
     background-position-y: 45%;
@@ -62,7 +62,7 @@
     width: 55px;
     height: 55px;
     border-radius: 50%;
-    background: url("../assets/Images/mohan-muruge.jpg");
+    background: url("../../assets/Images/mohan-muruge.jpg");
     background-position: left;
     background-size: cover;
   }

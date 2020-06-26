@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/nextVideo.scss";
+import "./NextVideo.scss";
 
 export default function NextVideo(props) {
   return (

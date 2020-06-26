@@ -1,8 +1,8 @@
 import React from "react";
-import "../styles/video.scss";
-import Play from "../assets/Icons/SVG/Icon-play.svg";
-import Fullscreen from "../assets/Icons/SVG/Icon-fullscreen.svg";
-import Volume from "../assets/Icons/SVG/Icon-volume.svg";
+import "./Video.scss";
+import Play from "../../assets/Icons/SVG/Icon-play.svg";
+import Fullscreen from "../../assets/Icons/SVG/Icon-fullscreen.svg";
+import Volume from "../../assets/Icons/SVG/Icon-volume.svg";
 
 export default function Video(props) {
   return (

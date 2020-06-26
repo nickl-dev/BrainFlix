@@ -1,5 +1,5 @@
-@import "partials/variables";
-@import "partials/mixins";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/mixins";
 
 .videos {
   padding: 0 16px;
@@ -26,8 +26,8 @@
     margin-left: 32px;
 
     &__heading {
-      font-size: 14px;
-      margin: 40px 0;
+      font-size: 12px;
+      margin: 40px 0 24px 0;
     }
   }
 }

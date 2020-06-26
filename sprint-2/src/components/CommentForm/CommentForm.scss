@@ -1,5 +1,5 @@
-@import "partials/variables";
-@import "partials/mixins";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/mixins";
 
 .commentForm {
   padding: 0 16px;
@@ -24,7 +24,7 @@
     margin-top: 25px;
     background: $color3;
     border-radius: 50%;
-    background: url("../assets/Images/mohan-muruge.jpg");
+    background: url("../../assets/Images/mohan-muruge.jpg");
     background-position: left;
     background-size: cover;
   }

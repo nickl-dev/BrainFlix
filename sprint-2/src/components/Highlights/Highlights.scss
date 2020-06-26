@@ -1,5 +1,5 @@
-@import "partials/variables";
-@import "partials/mixins";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/mixins";
 
 .highlights {
   padding: 0 16px;
@@ -108,7 +108,7 @@
     padding: 0;
 
     &__heading {
-      margin: 40px 0 24px 0;
+      margin: 40px 0 10px 0;
       font-size: 38px;
     }
 
@@ -121,11 +121,12 @@
     }
 
     &__by {
-      font-size: 18px;
+      font-size: 16px;
     }
 
     &__timestamp {
-      font-size: 16px;
+      font-size: 14px;
+      margin-left: 8px;
     }
 
     &__views-likes {
@@ -136,7 +137,7 @@
     &__paragraph {
       line-height: 24px;
       font-size: 16px;
-      width: 90%;
+      width: 80%;
     }
   }
 }

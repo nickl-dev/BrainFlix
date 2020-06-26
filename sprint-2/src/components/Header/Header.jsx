@@ -1,6 +1,6 @@
 import React from "react";
-import BrainflixLogo from "../assets/Logo/logo-brainflix.svg";
-import "../styles/header.scss";
+import BrainflixLogo from "../../assets/Logo/logo-brainflix.svg";
+import "./Header.scss";
 import { Link } from "react-router-dom";
 
 export default function Header() {

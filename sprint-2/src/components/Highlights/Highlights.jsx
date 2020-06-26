@@ -1,7 +1,7 @@
 import React from "react";
-import "../styles/highlights.scss";
-import IconViews from "../assets/Icons/SVG/Icon-views.svg";
-import IconLikes from "../assets/Icons/SVG/Icon-likes.svg";
+import "./Highlights.scss";
+import IconViews from "../../assets/Icons/SVG/Icon-views.svg";
+import IconLikes from "../../assets/Icons/SVG/Icon-likes.svg";
 
 export default function Highlights(props) {
   return (

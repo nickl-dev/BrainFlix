@@ -1,5 +1,5 @@
-@import "partials/variables";
-@import "partials/mixins";
+@import "../../styles/partials/variables";
+@import "../../styles/partials/mixins";
 
 .videos__nextVideo {
   display: flex;
@@ -65,7 +65,8 @@
 
 @include desktop {
   .videos__nextVideo {
-    margin: 10px 0;
+    margin: 14px 0;
+    height: 100px;
 
     .nextVideo {
       &__img-container {
@@ -77,6 +78,7 @@
         height: 60px;
         width: 230px;
       }
+
       &__title {
         font-size: 18px;
       }

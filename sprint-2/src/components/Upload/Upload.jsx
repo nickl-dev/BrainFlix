@@ -1,6 +1,6 @@
 import React from "react";
-import "../styles/upload.scss";
-import SampleVideo from "../assets/Video/brainstation-sample-video.mp4";
+import "./Upload.scss";
+import SampleVideo from "../../assets/Video/brainstation-sample-video.mp4";
 
 export default function Upload() {
   return (
