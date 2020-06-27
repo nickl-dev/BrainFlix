@@ -2,7 +2,6 @@ import React from "react";
 import "./Comment.scss";
 
 export default function Comment({ commentData }) {
-  console.log(commentData);
   const date = new Date(commentData.timestamp);
   const month = date.getMonth() + 1;
   const day = date.getDate();
@@ -11,8 +10,7 @@ export default function Comment({ commentData }) {
 
   return (
     <div>
-      {commentData.comments &&
-        commentData.comments.map((comments) => {
+      {commentData.comments && commentData.comments.map((comments) => {
           return (
             <div className="comment">
               <div className="comment__img"></div>

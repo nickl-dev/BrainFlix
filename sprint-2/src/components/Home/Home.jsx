@@ -16,30 +16,23 @@ export default class Home extends Component {
   };
 
   componentDidMount() {
-    axios.get(`${api__url}/videos?api_key=${api__key}`).then((response) => {
+    axios.get(`${api__url}/videos?api_key=${api__key}`).
+    then((response) => {
       const sideVideos = response.data;
       this.setState({ sideVideos });
-      console.log(sideVideos);
-      axios
-        .get(`${api__url}/videos/1af0jruup5gu?api_key=${api__key}`)
-        .then((topVideoResponse) => {
+      axios.get(`${api__url}/videos/1af0jruup5gu?api_key=${api__key}`)
+      .then((topVideoResponse) => {
           const topVideo = topVideoResponse.data;
           this.setState({ topVideo });
-          console.log(topVideo);
         });
     });
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log(prevProps);
-    console.log(prevState);
-    console.log(this.props);
     if (this.props.match.params.id !== prevProps.match.params.id) {
-      axios
-        .get(
-          `${api__url}/videos/${this.props.match.params.id}?api_key=${api__key}`
-        )
-        .then((newVideo) => {
+      axios.get(
+          `${api__url}/videos/${this.props.match.params.id}?api_key=${api__key}`)
+          .then((newVideo) => {
           const topVideo = newVideo.data;
           this.setState({ topVideo });
         });
@@ -55,7 +48,10 @@ export default class Home extends Component {
             <CommentForm />
             <CommentArea commentData={this.state.topVideo} />
           </div>
-          <VideoList data={this.state.sideVideos} />
+          <VideoList
+            data={this.state.sideVideos}
+            videoData={this.state.topVideo}
+          />
         </div>
       </div>
     );
