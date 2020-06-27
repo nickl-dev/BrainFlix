@@ -6,7 +6,7 @@
 
   &__heading {
     font-family: $font-stack-bold;
-    margin: 24px 0 32px 0;
+    margin: 32px 0 32px 0;
   }
 
   &__label {
@@ -24,6 +24,9 @@
   &__video {
     width: 100%;
     border-radius: 4px;
+    background-image: url('../../assets/Images/upload-video-preview.jpg');
+    background-position: center;
+    background-size: cover;
   }
 
   &__input {
@@ -89,6 +92,7 @@
 
     &__heading {
       font-size: 48px;
+      margin-top: 48px;
       padding-bottom: 32px;
       border-bottom: 2px solid $color3;
     }
@@ -170,13 +174,13 @@
     }
 
     &__cancel {
-      font-size: 16px;
+      font-size: 14px;
     }
 
     &__btn {
       height: 48px;
       width: 170px;
-      font-size: 16px;
+      font-size: 14px;
     }
   }
 }

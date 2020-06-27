@@ -1,7 +1,7 @@
 import React from "react";
 import "./Upload.scss";
 import SampleVideo from "../../assets/Video/brainstation-sample-video.mp4";
-import UploadPoster from "../../assets/Images/upload-video-preview";
+import UploadPoster from "../../assets/Images/upload-video-preview.jpg";
 import { Link } from "react-router-dom";
 
 export default function Upload() {
@@ -13,12 +13,13 @@ export default function Upload() {
           <label htmlFor={SampleVideo} className="upload__label">
             VIDEO THUMBNAIL
           </label>
-          <video
+          {/* <video
             src={SampleVideo}
             poster={UploadPoster}
+            controls
             className="upload__video"
-            poster
-          ></video>
+          ></video> */}
+          <div className="upload__video"></div>
         </div>
         <div className="upload__input-wrapper">
           <label htmlFor="upload__add-title" className="upload__label">
