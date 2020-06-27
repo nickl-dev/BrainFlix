@@ -4,10 +4,11 @@ import "./Comment.scss";
 export default function Comment({ commentData }) {
   console.log(commentData);
   const date = new Date(commentData.timestamp);
-    const month = date.getMonth() + 1
-    const day = date.getDate()
-    const year = date.getFullYear()
-    const timeStamp = `${month}/${day}/${year}`
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  const year = date.getFullYear();
+  const timeStamp = `${month}/${day}/${year}`;
+
   return (
     <div>
       {commentData.comments &&

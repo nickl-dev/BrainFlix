@@ -5,10 +5,11 @@ import IconLikes from "../../assets/Icons/SVG/Icon-likes.svg";
 
 export default function About({ aboutData }) {
   const date = new Date(aboutData.timestamp);
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const year = date.getFullYear()
-  const timeStamp = `${month}/${day}/${year}`
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  const year = date.getFullYear();
+  const timeStamp = `${month}/${day}/${year}`;
+
   return (
     <main className="highlights">
       <h1 className="highlights__heading">{aboutData.title}</h1>

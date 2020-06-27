@@ -21,21 +21,30 @@ export default class Home extends Component {
       this.setState({ sideVideos });
       console.log(sideVideos);
       axios
-        .get(`${api__url}/videos/1af0jruup5gu?api_key=${api__key}`).then((topVideoResponse) => {
+        .get(`${api__url}/videos/1af0jruup5gu?api_key=${api__key}`)
+        .then((topVideoResponse) => {
           const topVideo = topVideoResponse.data;
           this.setState({ topVideo });
           console.log(topVideo);
         });
     });
-
-    // axios
-    //   .get(`${api__url}/videos/1af0jruup5gu?api_key=${api__key}`).then((response) => {
-    //     const mainVideo = response.data;
-    //     this.setState({ mainVideo });
-    //     console.log(mainVideo);
-    //   });
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    console.log(prevProps);
+    console.log(prevState);
+    console.log(this.props);
+    if (this.props.match.params.id !== prevProps.match.params.id) {
+      axios
+        .get(
+          `${api__url}/videos/${this.props.match.params.id}?api_key=${api__key}`
+        )
+        .then((newVideo) => {
+          const topVideo = newVideo.data;
+          this.setState({ topVideo });
+        });
+    }
+  }
   render() {
     return (
       <div className="Home">

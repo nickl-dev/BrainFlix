@@ -13,12 +13,7 @@ export default function Upload() {
           <label htmlFor={SampleVideo} className="upload__label">
             VIDEO THUMBNAIL
           </label>
-          {/* <video
-            src={SampleVideo}
-            poster={UploadPoster}
-            controls
-            className="upload__video"
-          ></video> */}
+          <video poster={UploadPoster} className="upload__video"></video>
           <div className="upload__video"></div>
         </div>
         <div className="upload__input-wrapper">
