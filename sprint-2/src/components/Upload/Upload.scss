@@ -72,8 +72,11 @@
   &__cancel {
     font-family: $font-stack-demi;
     font-size: 18px;
-    color: $color1;
     text-align: center;
+    a {
+      color: $color1;
+      text-decoration: none;
+    }
     &:hover {
       cursor: pointer;
     }
