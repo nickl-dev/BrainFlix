@@ -1,0 +1,102 @@
+@import "../../styles/partials/variables";
+@import "../../styles/partials/mixins";
+
+.video__container {
+  width: 100%;
+  height: 250px;
+  background: $color2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .video__controls {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 10px;
+  }
+
+  .video__controls-wrapper {
+    background: rgba(32, 32, 32, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    height: 32px;
+    width: 50px;
+  }
+
+  .video__icon:hover {
+    cursor: pointer;
+  }
+
+  .slider {
+    width: 50%;
+    justify-content: space-evenly;
+    &__bar {
+      width: 60%;
+      height: 4px;
+      background: black;
+    }
+  }
+  .video__length {
+    color: $color5;
+    font-size: 12px;
+    margin: 0;
+  }
+
+  .fullvol {
+    width: 70px;
+    justify-content: space-evenly;
+  }
+}
+
+@include tablet {
+  .video__container {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+
+    .video {
+      width: 90%;
+    }
+
+    .video__controls {
+      width: 90%;
+    }
+
+    .slider {
+      width: 75%;
+      &__bar {
+        width: 80%;
+      }
+    }
+  }
+}
+
+@include desktop {
+  .video__container {
+    height: 600px;
+
+    .video {
+      width: 70%;
+    }
+
+    .video__length {
+      display: show;
+    }
+    .video__controls {
+      width: 70%;
+    }
+  }
+}

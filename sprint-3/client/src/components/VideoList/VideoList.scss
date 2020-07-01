@@ -1,0 +1,33 @@
+@import "../../styles/partials/variables";
+@import "../../styles/partials/mixins";
+
+.videos {
+  padding: 0 16px;
+
+  &__heading {
+    font-size: 18px;
+    color: $color4;
+  }
+}
+
+@include tablet {
+  .videos {
+    padding: 0 24px;
+
+    &__heading {
+      margin: 40px 0;
+    }
+  }
+}
+
+@include desktop {
+  .videos {
+    padding: 0;
+    margin-left: 32px;
+
+    &__heading {
+      font-size: 12px;
+      margin: 40px 0 24px 0;
+    }
+  }
+}
