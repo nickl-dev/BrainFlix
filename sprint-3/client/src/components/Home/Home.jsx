@@ -18,27 +18,36 @@ export default class Home extends Component {
   };
 
   componentDidMount() {
-    axios.get(`${api__url}/videos?api_key=${api__key}`)
-    // axios.get('http://localhost:8080/videos')
-    .then((response) => {
-      const sideVideos = response.data;
-      this.setState({ sideVideos });
+    axios
+      .get(`${api__url}/videos?api_key=${api__key}`)
+      // axios.get("http://localhost:8080/videos")
+      .then((response) => {
+        console.log(response);
+        const sideVideos = response.data;
+        this.setState({ sideVideos });
 
-      axios.get(`${api__url}/videos/1af0jruup5gu?api_key=${api__key}`)
-      // axios.get('http://localhost:8080/videos/1af0jruup5gu')
-        .then((topVideoResponse) => {
-          const topVideo = topVideoResponse.data;
-          this.setState({ topVideo });
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    });
+        axios
+          .get(`${api__url}/videos/1af0jruup5gu?api_key=${api__key}`)
+          // axios
+          //   .get("http://localhost:8080/videos/1af0jruup5gu")
+          .then((topVideoResponse) => {
+            console.log(topVideoResponse);
+            const topVideo = topVideoResponse.data;
+            this.setState({ topVideo });
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      });
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (this.props.match.params.id !== prevProps.match.params.id) {
-      axios.get(`${api__url}/videos/${this.props.match.params.id}?api_key=${api__key}`)
+      axios
+        .get(
+          `${api__url}/videos/${this.props.match.params.id}?api_key=${api__key}`
+        )
+        // axios.get(`http://localhost:8080/videos/${this.props.match.params.id}`)
         .then((newVideo) => {
           const topVideo = newVideo.data;
           this.setState({ topVideo });
@@ -59,7 +68,10 @@ export default class Home extends Component {
             <CommentForm />
             <CommentArea commentData={this.state.topVideo} />
           </div>
-          <VideoList data={this.state.sideVideos} videoData={this.state.topVideo}/>
+          <VideoList
+            data={this.state.sideVideos}
+            videoData={this.state.topVideo}
+          />
         </div>
       </div>
     );

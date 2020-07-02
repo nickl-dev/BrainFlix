@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const brainFlixData = require("./BrainFlixData.json");
 
 const today = new Date();
@@ -11,11 +12,12 @@ app.use((req, res, next) => {
   console.log(`Incoming request from ${req.path} @ ${dateTime}`);
   next();
 });
+app.use(cors());
 
 app.get("/videos", (req, res) => {
   res.send(brainFlixData);
 });
 
 app.listen(8080, () => {
-  console.log(`Now listening to 8080 for BrainFlix @ ${dateTime}`);
+  console.log(`Now listening at port 8080 for BrainFlix sprint 3 @ ${dateTime}`);
 });
