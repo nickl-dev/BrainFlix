@@ -12,7 +12,7 @@ export default function Comment({ commentData }) {
     <div>
       {commentData.comments && commentData.comments.map((comments) => {
           return (
-            <div className="comment">
+            <div className="comment" key={comments.id}>
               <div className="comment__img"></div>
               <div className="comment__description">
                 <div className="comment__name-date">

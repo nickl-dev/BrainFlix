@@ -20,21 +20,11 @@ export default function Upload() {
           <label htmlFor="upload__add-title" className="upload__label">
             TITLE YOUR VIDEO
           </label>
-          <input
-            type="text"
-            name="upload__add-title"
-            className="upload__add-title upload__input"
-            placeholder="Add a title to your video"
-          />
+          <input type="text" name="upload__add-title" className="upload__add-title upload__input" placeholder="Add a title to your video"/>
           <label htmlFor="upload__add-description" className="upload__label">
             ADD A VIDEO DESCRIPTION
           </label>
-          <textarea
-            type="text"
-            name="upload__add-description"
-            className="upload__add-description upload__input"
-            placeholder="Add a description of your video"
-          />
+          <textarea type="text" name="upload__add-description" className="upload__add-description upload__input" placeholder="Add a description of your video"/>
         </div>
       </div>
       <div className="upload__bottom-wrapper">

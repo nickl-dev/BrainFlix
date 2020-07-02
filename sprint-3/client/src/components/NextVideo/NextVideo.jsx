@@ -6,7 +6,7 @@ export default function NextVideo({ data, videoData }) {
   return data.map((sideVideoData) => {
     if (videoData.id !== sideVideoData.id) {
       return (
-        <div className="videos__nextVideo">
+        <div className="videos__nextVideo" key={sideVideoData.id}>
           <div className="nextVideo__img-container">
             <Link to={`/videos/${sideVideoData.id}`}>
               <img src={sideVideoData.image} alt="NextVideo thumbnail" className="nextVideo__img" />

@@ -6,7 +6,7 @@ export default function VideoList({ data, videoData }) {
   return (
     <section className="videos">
       <h5 className="videos__heading">NEXT VIDEO</h5>
-      <NextVideo data={data} key={data.id} videoData={videoData} />
+      <NextVideo data={data} videoData={videoData} />
     </section>
   );
 }
