@@ -9,7 +9,7 @@ import axios from "axios";
 const api__url = "https://project-2-api.herokuapp.com";
 const api__key = "4a0219df-52b3-47e4-a3a5-958a1a7fa8c7";
 
-// const api__url = 'http://localhost:8080/'
+// const api__url = 'http://localhost:8080'
 
 export default class Home extends Component {
   state = {
@@ -19,11 +19,13 @@ export default class Home extends Component {
 
   componentDidMount() {
     axios.get(`${api__url}/videos?api_key=${api__key}`)
+    // axios.get('http://localhost:8080/videos')
     .then((response) => {
       const sideVideos = response.data;
       this.setState({ sideVideos });
 
       axios.get(`${api__url}/videos/1af0jruup5gu?api_key=${api__key}`)
+      // axios.get('http://localhost:8080/videos/1af0jruup5gu')
         .then((topVideoResponse) => {
           const topVideo = topVideoResponse.data;
           this.setState({ topVideo });
@@ -57,9 +59,7 @@ export default class Home extends Component {
             <CommentForm />
             <CommentArea commentData={this.state.topVideo} />
           </div>
-          <VideoList
-            data={this.state.sideVideos}
-            videoData={this.state.topVideo}/>
+          <VideoList data={this.state.sideVideos} videoData={this.state.topVideo}/>
         </div>
       </div>
     );

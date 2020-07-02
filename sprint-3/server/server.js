@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const brainFlixData = require("./BrainFlixData.json");
 
 const today = new Date();
 const date = `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}`;
@@ -12,7 +13,7 @@ app.use((req, res, next) => {
 });
 
 app.get("/videos", (req, res) => {
-  res.send(B);
+  res.send(brainFlixData);
 });
 
 app.listen(8080, () => {
