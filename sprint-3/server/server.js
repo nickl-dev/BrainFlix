@@ -15,13 +15,24 @@ app.use((req, res, next) => {
 app.use(cors());
 
 app.get("/videos", (req, res) => {
-  res.json(brainFlixData);
+  let videoArray = [];
+  brainFlixData.map((data) => {
+    videoArray.push({
+      "id": data.id,
+      "title": data.title,
+      "channel": data.channel,
+      "image": data.image,
+    });
+  });
+  res.json(videoArray);
 });
 
-app.get('/videos/1af0jruup5gu', (req, res) => {
-  res.json(brainFlixData[0])
-})
+app.get("/videos/1af0jruup5gu", (req, res) => {
+  res.json(videoArray[0]);
+});
 
 app.listen(8080, () => {
-  console.log(`Now listening at port 8080 for BrainFlix sprint 3 @ ${dateTime}`);
+  console.log(
+    `Now listening at port 8080 for BrainFlix sprint 3 @ ${dateTime}`
+  );
 });
