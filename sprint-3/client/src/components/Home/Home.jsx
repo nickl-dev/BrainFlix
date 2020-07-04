@@ -9,7 +9,7 @@ import axios from "axios";
 const api__url = "https://project-2-api.herokuapp.com";
 const api__key = "4a0219df-52b3-47e4-a3a5-958a1a7fa8c7";
 
-// const api__url = 'http://localhost:8080'
+const API_URL = "http://localhost:8080";
 
 export default class Home extends Component {
   state = {
@@ -18,26 +18,32 @@ export default class Home extends Component {
   };
 
   componentDidMount() {
-    axios
-      .get(`${api__url}/videos?api_key=${api__key}`)
-      // axios.get("http://localhost:8080/videos")
+    axios.get(`${api__url}/videos?api_key=${api__key}`)
+      // axios.get(`${API_URL}/videos`)
       .then((response) => {
         console.log(response);
         const sideVideos = response.data;
         this.setState({ sideVideos });
 
-        axios
-          .get(`${api__url}/videos/1af0jruup5gu?api_key=${api__key}`)
-          // axios
-          //   .get("http://localhost:8080/videos/1af0jruup5gu")
-          .then((topVideoResponse) => {
-            console.log(topVideoResponse);
-            const topVideo = topVideoResponse.data;
-            this.setState({ topVideo });
-          })
-          .catch((err) => {
-            console.log(err);
-          });
+        if (!this.props.match.params.id) {
+          axios.get(`${api__url}/videos/1af0jruup5gu?api_key=${api__key}`)
+            .then((topVideoResponse) => {
+              console.log(topVideoResponse);
+              const topVideo = topVideoResponse.data;
+              this.setState({ topVideo });
+            });
+
+        } else {
+          axios.get(`${api__url}/videos/${this.props.match.params.id}?api_key=${api__key}`)
+            .then((topVideoResponse) => {
+              console.log(topVideoResponse);
+              const topVideo = topVideoResponse.data;
+              this.setState({ topVideo });
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        }
       });
   }
 
@@ -47,7 +53,6 @@ export default class Home extends Component {
         .get(
           `${api__url}/videos/${this.props.match.params.id}?api_key=${api__key}`
         )
-        // axios.get(`http://localhost:8080/videos/${this.props.match.params.id}`)
         .then((newVideo) => {
           const topVideo = newVideo.data;
           this.setState({ topVideo });

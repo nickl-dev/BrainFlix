@@ -15,8 +15,12 @@ app.use((req, res, next) => {
 app.use(cors());
 
 app.get("/videos", (req, res) => {
-  res.send(brainFlixData);
+  res.json(brainFlixData);
 });
+
+app.get('/videos/1af0jruup5gu', (req, res) => {
+  res.json(brainFlixData[0])
+})
 
 app.listen(8080, () => {
   console.log(`Now listening at port 8080 for BrainFlix sprint 3 @ ${dateTime}`);

@@ -7,7 +7,7 @@ import Volume from "../../assets/Icons/SVG/Icon-volume.svg";
 export default function TopVideo({ topVideoData }) {
   return (
     <div className="video__container">
-      <video className="video" src={topVideoData.video} poster={topVideoData.image}></video>
+      <video className="video" src={`${topVideoData.video}?api_key=4a0219df-52b3-47e4-a3a5-958a1a7fa8c7`} poster={topVideoData.image}></video>
       <div className="video__controls">
         <div className="video__controls-wrapper play">
           <img src={Play} alt="Play icon" className="video__icon" />
