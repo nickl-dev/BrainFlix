@@ -18,17 +18,41 @@ app.get("/videos", (req, res) => {
   let videoArray = [];
   brainFlixData.map((data) => {
     videoArray.push({
-      "id": data.id,
-      "title": data.title,
-      "channel": data.channel,
-      "image": data.image,
+      id: data.id,
+      title: data.title,
+      channel: data.channel,
+      image: data.image,
     });
   });
   res.json(videoArray);
 });
 
 app.get("/videos/1af0jruup5gu", (req, res) => {
-  res.json(videoArray[0]);
+  let topVideo = [];
+  brainFlixData.map((data) => {
+    topVideo.push({
+      id: data.id,
+      title: data.title,
+      channel: data.channel,
+      image: data.image,
+      description: data.description,
+      views: data.views,
+      likes: data.likes,
+      duration: data.duration,
+      video: data.video,
+      timestamp: data.timestamp,
+      comments: data.comments,
+    });
+  });
+  res.json(topVideo[0]);
+});
+
+app.get("/videos/:id", (req, res) => {
+  let newVideo = brainFlixData.filter((data, index) => {
+    return data.id === req.params.id;
+  });
+  console.log(newVideo);
+  res.json(newVideo);
 });
 
 app.listen(8080, () => {

@@ -5,7 +5,7 @@ import Fullscreen from "../../assets/Icons/SVG/Icon-fullscreen.svg";
 import Volume from "../../assets/Icons/SVG/Icon-volume.svg";
 
 export default function TopVideo({ topVideoData }) {
-  
+  console.log(topVideoData)
   return (
     <div className="video__container">
       <video
