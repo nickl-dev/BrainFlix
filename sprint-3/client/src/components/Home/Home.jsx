@@ -19,40 +19,54 @@ export default class Home extends Component {
 
   componentDidMount() {
     // axios.get(`${api__url}/videos?api_key=${api__key}`)
-      axios.get(`${API_URL}/videos`)
-      .then((response) => {
-        console.log(response);
-        const sideVideos = response.data;
-        this.setState({ sideVideos });
+    axios.get(`${API_URL}/videos`).then((response) => {
+      console.log(response);
+      const sideVideos = response.data;
+      this.setState({ sideVideos });
 
-        if (!this.props.match.params.id) {
-          // axios.get(`${api__url}/videos/1af0jruup5gu?api_key=${api__key}`)
-          axios.get(`${API_URL}/videos/1af0jruup5gu`)
-            .then((topVideoResponse) => {
-              console.log(topVideoResponse)
-              const topVideo = topVideoResponse.data;
-              this.setState({ topVideo });
-            });
-
-        } else {
-          // axios.get(`${api__url}/videos/${this.props.match.params.id}?api_key=${api__key}`)
-          axios.get(`${API_URL}/videos/${this.props.match.params.id}`)
-            .then((topVideoResponse) => {
-              const topVideo = topVideoResponse.data;
-              this.setState({ topVideo });
-            })
-            .catch((err) => {
-              console.log(err);
-            });
-        }
+      axios.get(`${API_URL}/videos/1af0jruup5gu`).then((topVideoResponse) => {
+        const topVideo = topVideoResponse.data;
+        console.log(topVideo);
+        this.setState({ topVideo });
       });
+
+      // if (!this.props.match.params.id) {
+      //   // axios.get(`${api__url}/videos/1af0jruup5gu?api_key=${api__key}`)
+      //   console.log('hello there');
+      //   axios.get(`${API_URL}/videos/1af0jruup5gu`)
+      //     .then((topVideoResponse) => {
+      //       const topVideo = topVideoResponse.data.data;
+      //       this.setState({ topVideo });
+      //     });
+
+      // } else {
+      //   // axios.get(`${api__url}/videos/${this.props.match.params.id}?api_key=${api__key}`)
+      //   axios.get(`${API_URL}/videos/${this.props.match.params.id}`)
+      //     .then((topVideoResponse) => {
+      //       const topVideo = topVideoResponse.data;
+      //       this.setState({ topVideo });
+      //     })
+      //     .catch((err) => {
+      //       console.log(err);
+      //     });
+      // }
+    });
   }
 
   componentDidUpdate(prevProps, prevState) {
+    console.log(this.props.match.params.id);
+    console.log(prevProps.match.params.id);
+
     if (this.props.match.params.id !== prevProps.match.params.id) {
-      // axios.get(`${api__url}/videos/${this.props.match.params.id}?api_key=${api__key}`)
-      axios.get(`${API_URL}/videos/${this.props.match.params.id}`)
+      console.log(this.props.match.params.id);
+      if (this.props.match.params.id === undefined) {
+        console.log(this.props.match.params.id);
+        this.props.match.params.id = "1af0jruup5gu";
+      }
+      axios
+        .get(`${API_URL}/videos/${this.props.match.params.id}`)
         .then((newVideo) => {
+          console.log(newVideo.data);
           const topVideo = newVideo.data;
           this.setState({ topVideo });
         })
