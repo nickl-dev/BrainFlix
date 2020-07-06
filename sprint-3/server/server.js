@@ -52,14 +52,11 @@ app.get("/videos/1af0jruup5gu", (req, res) => {
 });
 
 app.get("/videos/:id", (req, res) => {
-  let newVideo = brainFlixData.filter(
-    (data, index) => data.id === req.params.id
-  );
+  let newVideo = brainFlixData.filter((data, index) => data.id === req.params.id);
   res.send(newVideo.pop());
 });
 
 app.post("/videos", (req, res) => {
-  console.log(req.body);
   brainFlixData.push({
     id: Date.now().toString(),
     title: req.body.title,
@@ -70,7 +67,7 @@ app.post("/videos", (req, res) => {
     likes: "100",
     duration: "5:00",
     video: "https://project-2-api.herokuapp.com/stream",
-    timestamp: 1545162149000,
+    timestamp: Date.now(),
     comments: [
       {
         name: "Micheal Lyons",

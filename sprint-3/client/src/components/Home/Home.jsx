@@ -20,21 +20,16 @@ export default class Home extends Component {
     axios.get(`${API_URL}/videos`)
     .then((response) => {
       const sideVideos = response.data;
-      console.log(sideVideos);
       this.setState({ sideVideos });
-      console.log(defaultVideoId)
-      console.log(this.props.match.params.id)
       if(defaultVideoId !== this.props.match.params.id) {
         if(this.props.match.params.id === undefined) {
           this.props.match.params.id = defaultVideoId
         }
-        console.log(this.props.match.params.id);
         paramsId = this.props.match.params.id;
 
       axios.get(`${API_URL}/videos/${paramsId}`)
         .then((topVideoResponse) => {
           const topVideo = topVideoResponse.data;
-          console.log(topVideo);
           this.setState({ topVideo });
         })
         .catch((err) => {
@@ -52,13 +47,11 @@ export default class Home extends Component {
       axios.get(`${API_URL}/videos/${this.props.match.params.id}`)
       .then((newVideo) => {
           let topVideo;
-          // If newVideo.data is an Array, set topVideo to be first item in Array.
           if (Array.isArray(newVideo.data)) {
             topVideo = newVideo.data[0];
           } else {
             topVideo = newVideo.data;
           }
-          // If newVideo.data is an object, set topVideo to be newVideo.data
           this.setState({ topVideo });
         })
         .catch((err) => {
@@ -77,9 +70,7 @@ export default class Home extends Component {
             <CommentForm />
             <CommentArea commentData={this.state.topVideo} />
           </div>
-          <VideoList
-            data={this.state.sideVideos}
-            videoData={this.state.topVideo} />
+          <VideoList data={this.state.sideVideos} videoData={this.state.topVideo} />
         </div>
       </div>
     );
