@@ -12,13 +12,13 @@ export default class Upload extends Component {
     image: "",
   };
 
-  inputChange = (e) => {
+  onChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  videoPublish = (e) => {
+  onSubmit = (e) => {
     e.preventDefault();
-    console.log('hello there')
+    console.log("hello there");
 
     const { title, description, image } = this.state;
 
@@ -39,7 +39,7 @@ export default class Upload extends Component {
     return (
       <main className="upload">
         <h1 className="upload__heading">Upload Video</h1>
-        <form className="upload__form" onSubmit={this.videoPublish} method='post' action='http://localhost:8080/videos'>
+        <form className="upload__form" onSubmit={this.onSubmit}>
           <div className="upload__video-input">
             <div className="upload__video-wrapper">
               <label htmlFor={SampleVideo} className="upload__label">
@@ -49,21 +49,18 @@ export default class Upload extends Component {
               <div className="upload__video"></div>
             </div>
             <div className="upload__input-wrapper">
-              <label htmlFor="upload__add-title" className="upload__label">
+              <label htmlFor="title" className="upload__label">
                 TITLE YOUR VIDEO
               </label>
               <input
                 type="text"
-                name='title'
+                name="title"
                 className="upload__add-title upload__input"
                 placeholder="Add a title to your video"
                 value={title}
-                onChange={this.inputChange}
+                onChange={this.onChange}
               />
-              <label
-                htmlFor="upload__add-description"
-                className="upload__label"
-              >
+              <label htmlFor="description" className="upload__label">
                 ADD A VIDEO DESCRIPTION
               </label>
               <textarea
@@ -72,7 +69,7 @@ export default class Upload extends Component {
                 className="upload__add-description upload__input"
                 placeholder="Add a description of your video"
                 value={description}
-                onChange={this.inputChange}
+                onChange={this.onChange}
               />
             </div>
           </div>

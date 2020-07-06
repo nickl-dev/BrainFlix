@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const bodyParser = require("body-parser");
 const brainFlixData = require("./BrainFlixData.json");
 
 const today = new Date();
@@ -9,6 +10,9 @@ const time = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
 const dateTime = `${date} ${time}`;
 
 app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use((req, res, next) => {
   console.log(`Incoming request from ${req.path} @ ${dateTime}`);
   next();
@@ -24,7 +28,7 @@ app.get("/videos", (req, res) => {
       image: data.image,
     });
   });
-  res.json(videoArray);
+  res.send(videoArray);
 });
 
 app.get("/videos/1af0jruup5gu", (req, res) => {
@@ -44,24 +48,23 @@ app.get("/videos/1af0jruup5gu", (req, res) => {
       comments: data.comments,
     });
   });
-  res.json(topVideo[0]);
+  res.send(topVideo[0]);
 });
 
 app.get("/videos/:id", (req, res) => {
   let newVideo = brainFlixData.filter(
     (data, index) => data.id === req.params.id
   );
-  console.log(newVideo);
-  res.json(newVideo);
+  res.send(newVideo.pop());
 });
 
 app.post("/videos", (req, res) => {
+  console.log(req.body);
   brainFlixData.push({
     id: Date.now().toString(),
     title: req.body.title,
     channel: "My Channel",
-    // image: "https://blog.passmefast.co.uk/images/youtube-video-icon-feature-image.jpg",
-    image: "../../assets/Images/upload-video-preview.jpg",
+    image: "https://blog.passmefast.co.uk/images/youtube-video-icon-feature-image.jpg",
     description: req.body.description,
     views: "100",
     likes: "100",
@@ -95,7 +98,7 @@ app.post("/videos", (req, res) => {
       },
     ],
   });
-  res.json(brainFlixData)
+  res.json(brainFlixData);
 });
 
 app.listen(8080, () => {

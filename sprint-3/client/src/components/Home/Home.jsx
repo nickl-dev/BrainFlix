@@ -7,6 +7,8 @@ import VideoList from "../VideoList/VideoList";
 import axios from "axios";
 
 const API_URL = "http://localhost:8080";
+let defaultVideoId = '1af0jruup5gu';
+let paramsId;
 
 export default class Home extends Component {
   state = {
@@ -20,8 +22,16 @@ export default class Home extends Component {
       const sideVideos = response.data;
       console.log(sideVideos);
       this.setState({ sideVideos });
+      console.log(defaultVideoId)
+      console.log(this.props.match.params.id)
+      if(defaultVideoId !== this.props.match.params.id) {
+        if(this.props.match.params.id === undefined) {
+          this.props.match.params.id = defaultVideoId
+        }
+        console.log(this.props.match.params.id);
+        paramsId = this.props.match.params.id;
 
-      axios.get(`${API_URL}/videos/1af0jruup5gu`)
+      axios.get(`${API_URL}/videos/${paramsId}`)
         .then((topVideoResponse) => {
           const topVideo = topVideoResponse.data;
           console.log(topVideo);
@@ -30,7 +40,7 @@ export default class Home extends Component {
         .catch((err) => {
           console.log(err);
         });
-    });
+    }});
   }
 
   componentDidUpdate(prevProps, prevState) {
