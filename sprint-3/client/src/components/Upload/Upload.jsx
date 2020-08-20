@@ -5,6 +5,8 @@ import UploadPoster from "../../assets/Images/upload-video-preview.jpg";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+const API_URL = "http://localhost:8080";
+
 export default class Upload extends Component {
   state = {
     title: "",
@@ -18,20 +20,23 @@ export default class Upload extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-
     const { title, description, image } = this.state;
-
-    axios.post("http://localhost:8080/videos", { title, description, image })
-      .then((res) => {
-        const uploadData = res.data;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    if (!title || !description) {
+      alert("Please enter more information about your video.");
+    } else {
+      axios
+        .post(`${API_URL}`, { title, description, image })
+        .then((res) => {})
+        .catch((err) => {
+          console.log(err);
+        });
+      alert("Your video has been uploaded!");
+      this.setState({ title: "", description: "" });
+    }
   };
 
   render() {
-    const { title, description} = this.state;
+    const { title, description } = this.state;
 
     return (
       <main className="upload">
@@ -46,17 +51,37 @@ export default class Upload extends Component {
               <div className="upload__video"></div>
             </div>
             <div className="upload__input-wrapper">
-              <label htmlFor="title" className="upload__label">TITLE YOUR VIDEO</label>
-              <input type="text" name="title" className="upload__add-title upload__input"
-                placeholder="Add a title to your video" value={title} onChange={this.onChange}/>
-              <label htmlFor="description" className="upload__label">ADD A VIDEO DESCRIPTION</label>
-              <textarea type="text" name="description" className="upload__add-description upload__input" 
-              placeholder="Add a description of your video" value={description} onChange={this.onChange}/>
+              <label htmlFor="title" className="upload__label">
+                TITLE YOUR VIDEO
+              </label>
+              <input
+                type="text"
+                name="title"
+                className="upload__add-title upload__input"
+                placeholder="Add a title to your video"
+                value={title}
+                onChange={this.onChange}
+              />
+              <label htmlFor="description" className="upload__label">
+                ADD A VIDEO DESCRIPTION
+              </label>
+              <textarea
+                type="text"
+                name="description"
+                className="upload__add-description upload__input"
+                placeholder="Add a description of your video"
+                value={description}
+                onChange={this.onChange}
+              />
             </div>
           </div>
           <div className="upload__bottom-wrapper">
-            <button className="upload__btn" type="submit">PUBLISH</button>
-            <h2 className="upload__cancel"><Link to="/">CANCEL</Link></h2>
+            <button className="upload__btn" type="submit">
+              PUBLISH
+            </button>
+            <h2 className="upload__cancel">
+              <Link to="/">CANCEL</Link>
+            </h2>
           </div>
         </form>
       </main>

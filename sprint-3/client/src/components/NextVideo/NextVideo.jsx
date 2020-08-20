@@ -9,7 +9,11 @@ export default function NextVideo({ data, videoData }) {
         <div className="videos__nextVideo" key={sideVideoData.id}>
           <div className="nextVideo__img-container">
             <Link to={`/videos/${sideVideoData.id}`}>
-              <img src={sideVideoData.image} alt="NextVideo thumbnail" className="nextVideo__img" />
+              <img
+                src={sideVideoData.image}
+                alt="NextVideo thumbnail"
+                className="nextVideo__img"
+              />
             </Link>
           </div>
           <div className="nextVideo__text">

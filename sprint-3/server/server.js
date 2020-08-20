@@ -52,7 +52,9 @@ app.get("/videos/1af0jruup5gu", (req, res) => {
 });
 
 app.get("/videos/:id", (req, res) => {
-  let newVideo = brainFlixData.filter((data, index) => data.id === req.params.id);
+  let newVideo = brainFlixData.filter(
+    (data, index) => data.id === req.params.id
+  );
   res.send(newVideo.pop());
 });
 
@@ -61,7 +63,8 @@ app.post("/videos", (req, res) => {
     id: Date.now().toString(),
     title: req.body.title,
     channel: "My Channel",
-    image: "https://blog.passmefast.co.uk/images/youtube-video-icon-feature-image.jpg",
+    image:
+      "https://blog.passmefast.co.uk/images/youtube-video-icon-feature-image.jpg",
     description: req.body.description,
     views: "100",
     likes: "100",
